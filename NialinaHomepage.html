@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nialina Fitness - Find Your Strength, Achieve Your Zen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Quicksand:wght@300;400;500&display=swap" rel="NialinaStyle">
+
+    <style>
+	
+        /* Reset basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* --- Zen Theme Colors --- */
+        :root {
+            --bg-beige: #F5F5DC; /* Beige background */
+            --bg-soft-white: #FAF0E6; /* Soft off-white */
+            --pastel-green: #A8D8B9; /* Soft pastel green */
+            --dark-green: #556B2F; /* Darker green for text/accents */
+            --text-color: #4a4a4a; /* Dark grey for main text */
+            --light-grey: #ccc;
+            --white: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Basic body styling - Zen Theme Applied */
+        body {
+            font-family: 'Lato', sans-serif; /* Primary font */
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-soft-white); /* Use soft white for main background */
+        }
+
+        h1, h2, h3 {
+             font-family: 'Quicksand', sans-serif; /* Softer font for headings */
+             color: var(--dark-green); /* Dark green for headings */
+             font-weight: 500;
+        }
+
+        /* Container for centering content */
+        .container {
+            width: 85%; /* Slightly wider */
+            max-width: 1100px; /* Max width */
+            margin: auto;
+            overflow: hidden; /* Clear floats */
+            padding: 20px 0;
+        }
+
+        /* Header Styling */
+        header {
+            background: var(--white);
+            color: var(--dark-green);
+            padding-top: 20px; /* Adjusted padding */
+            min-height: 80px;
+            border-bottom: 1px solid var(--light-grey);
+            position: sticky; /* Make header sticky */
+            top: 0;
+            z-index: 1000; /* Ensure header is above other content */
+            box-shadow: 0 2px 5px var(--shadow-color);
+        }
+
+        header #branding {
+            float: left;
+            margin-top: 5px; /* Align better */
+        }
+
+        header #branding h1 {
+            margin: 0;
+            font-size: 1.8em; /* Slightly larger */
+        }
+        header #branding h1 a {
+             color: var(--dark-green);
+             text-decoration: none;
+        }
+
+        /* Navigation Styling */
+        header nav {
+            float: right;
+            margin-top: 15px; /* Align better */
+        }
+
+        header nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        header nav ul li {
+            display: inline;
+            padding: 0 15px 0 15px; /* Adjusted padding */
+        }
+
+        header nav ul li a {
+            color: var(--dark-green);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            font-weight: 700;
+            transition: color 0.3s ease; /* Smooth transition for hover */
+        }
+
+        /* --- Interactivity: Nav Link Hover --- */
+        header nav ul li a:hover,
+        header nav ul li.current a {
+            color: var(--pastel-green); /* Change color on hover */
+        }
+
+        /* Hero Section Styling */
+        #hero {
+            min-height: 500px; /* Taller hero */
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://placehold.co/1200x600/A8D8B9/556B2F?text=Nialina+Fitness+Hero') no-repeat center center/cover; /* ADD A CALM HERO IMAGE - Placeholder added */
+            text-align: center;
+            color: var(--white); /* White text on image */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px; /* More padding */
+        }
+
+        #hero h1 {
+            margin-top: 0;
+            font-size: 3.5em; /* Responsive font size */
+            margin-bottom: 15px;
+            color: var(--white); /* Ensure heading is white */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Text shadow for readability */
+        }
+
+        #hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            max-width: 600px; /* Limit width of paragraph */
+        }
+
+        /* Button Styling */
+        .button {
+            display: inline-block;
+            background: var(--pastel-green); /* Use pastel green */
+            color: var(--dark-green); /* Dark green text on button */
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px; /* More rounded corners for softer look */
+            margin: 5px;
+            font-weight: 700;
+            border: 2px solid transparent; /* For hover effect */
+            transition: all 0.3s ease; /* Smooth transition */
+            cursor: pointer; /* Indicate clickable */
+        }
+
+        /* --- Interactivity: Button Hover --- */
+        .button:hover {
+            background: var(--dark-green);
+            color: var(--white);
+            transform: translateY(-2px); /* Slight lift effect */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        /* Sections Styling */
+        .section {
+            padding: 60px 0; /* More vertical padding */
+            text-align: center;
+        }
+        .section:nth-child(even) { /* Alternate background for visual separation */
+             background-color: var(--bg-beige);
+        }
+
+        .section h2 {
+            margin-bottom: 40px; /* More space below heading */
+            font-size: 2.5em;
+        }
+
+        /* Updated Section: 3 Training Packages */
+        #training-packages { /* Changed ID from programs-overview */
+             background-color: var(--bg-beige); /* Ensure beige background */
+        }
+
+        .packages { /* Changed class from features */
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .package-box { /* Changed class from feature-box */
+            width: 30%;
+            padding: 30px 25px; /* More padding */
+            margin-bottom: 30px;
+            background: var(--white);
+            border-radius: 10px; /* Slightly more rounded */
+            box-shadow: 0 3px 8px var(--shadow-color);
+            text-align: left; /* Align text left within box */
+            transition: all 0.3s ease; /* Transition for hover */
+        }
+
+        /* --- Interactivity: Package Box Hover --- */
+        .package-box:hover {
+             transform: translateY(-5px); /* Lift effect */
+             box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        .package-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            text-align: center; /* Center package title */
+        }
+        .package-box p {
+            margin-bottom: 15px; /* Space between paragraphs */
+            font-size: 0.95em;
+        }
+        .package-box ul {
+            list-style: none; /* Remove default bullets */
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+        .package-box ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px; /* Space for custom bullet */
+        }
+        /* Custom bullet point (zen style) */
+        .package-box ul li::before {
+            content: '•'; /* Simple bullet, could use SVG or image */
+            color: var(--pastel-green);
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: -2px; /* Adjust vertical alignment */
+        }
+        .package-box .button { /* Center button within package box */
+            display: block;
+            width: fit-content;
+            margin: 20px auto 0 auto; /* Center horizontally */
+            text-align: center;
+        }
+
+
+        /* --- New Section: Enquiry Form --- */
+        #enquiry {
+            background-color: var(--white); /* Match header background */
+        }
+        #enquiry form {
+            max-width: 600px;
+            margin: 20px auto; /* Center form */
+            padding: 30px;
+            background: var(--bg-soft-white); /* Light background for form area */
+            border-radius: 8px;
+            box-shadow: 0 3px 8px var(--shadow-color);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--dark-green);
+            font-weight: bold;
+            text-align: left;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--light-grey);
+            border-radius: 5px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1em;
+        }
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical; /* Allow vertical resize */
+        }
+        .form-group select {
+             appearance: none; /* Remove default dropdown arrow */
+             background: var(--white) url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E') no-repeat right 10px center;
+             background-size: 10px;
+             background-color: var(--white); /* Ensure select background is white */
+        }
+        #enquiry form .button { /* Style form submit button */
+            display: block;
+            width: 100%;
+            border: none; /* Remove default border */
+        }
+
+
+        /* Footer Styling */
+        footer {
+            padding: 30px 20px; /* More padding */
+            margin-top: 0; /* Remove margin if last section has padding */
+            color: var(--bg-soft-white); /* Light text on dark background */
+            background-color: var(--dark-green); /* Use dark green */
+            text-align: center;
+        }
+        footer nav ul {
+             margin-bottom: 15px;
+        }
+        footer nav ul li {
+            display: inline;
+            padding: 0 10px;
+        }
+        footer nav ul li a {
+             color: var(--bg-soft-white);
+             text-decoration: none;
+             transition: color 0.3s ease;
+        }
+        footer nav ul li a:hover {
+             color: var(--pastel-green);
+        }
+        footer p {
+            font-size: 0.9em;
+        }
+
+        /* Basic Responsive Example */
+        @media(max-width: 768px) {
+            header #branding,
+            header nav {
+                float: none;
+                text-align: center;
+                width: 100%;
+            }
+            header nav ul li {
+                display: block; /* Stack nav items */
+                padding: 8px 0;
+            }
+            #hero h1 {
+                font-size: 2.5em; /* Adjust font size */
+            }
+            #hero p {
+                font-size: 1.1em;
+            }
+            .packages {
+                flex-direction: column; /* Stack columns */
+                align-items: center;
+            }
+            .package-box {
+                width: 90%; /* Adjust width for mobile */
+                margin-bottom: 25px;
+            }
+             #enquiry form {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+         @media(max-width: 480px) {
+             .container {
+                 width: 95%; /* Use more width on small screens */
+             }
+              #hero h1 {
+                font-size: 2em;
+            }
+            #hero p {
+                font-size: 1em;
+            }
+             .section h2 {
+                 font-size: 2em;
+             }
+             .button {
+                 padding: 10px 18px;
+                 font-size: 0.9em;
+             }
+         }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><a href="index.html">Nialina Fitness</a></h1> </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Find Your Strength, Achieve Your Zen</h1>
+            <p>Personalized training programs designed for mind and body wellness in a calm, supportive environment.</p>
+            <p>
+                <a href="#training-packages" class="button">Explore Packages</a> <a href="#enquiry" class="button">Make an Enquiry</a> </p>
+        </div>
+    </section>
+
+    <section id="intro" class="section">
+        <div class="container">
+            <h2>Welcome to Nialina Fitness</h2>
+            <p>Discover a unique approach to fitness that integrates mindful movement and personalized coaching to help you achieve sustainable results and inner balance. We believe fitness is a journey, not just a destination.</p>
+            </div>
+    </section>
+
+    <section id="training-packages" class="section"> <div class="container">
+            <h2>Personal Training Packages</h2>
+            <div class="packages"> <div class="package-box">
+                    <h3>Zen Starter</h3>
+                    <p>Perfect for beginners looking to build a foundation in fitness and mindfulness.</p>
+                    <ul>
+                        <li>Initial Consultation & Goal Setting</li>
+                        <li>4 Personal Training Sessions (1/week)</li>
+                        <li>Basic Mindful Movement Techniques</li>
+                        <li>Introductory Nutrition Guide</li>
+                    </ul>
+                    <a href="#enquiry" class="button">Enquire Now</a>
+                </div>
+                <div class="package-box">
+                    <h3>Balanced Body</h3>
+                    <p>Ideal for those seeking to enhance strength, flexibility, and overall well-being.</p>
+                     <ul>
+                        <li>Comprehensive Fitness Assessment</li>
+                        <li>8 Personal Training Sessions (2/week)</li>
+                        <li>Intermediate Mindfulness Practices</li>
+                        <li>Personalized Nutrition Advice</li>
+                    </ul>
+                     <a href="#enquiry" class="button">Enquire Now</a>
+                </div>
+                <div class="package-box">
+                    <h3>Total Transformation</h3>
+                    <p>A complete program for dedicated individuals aiming for significant results and lifestyle change.</p>
+                     <ul>
+                        <li>In-depth Assessment & Progress Tracking</li>
+                        <li>12 Personal Training Sessions (3/week)</li>
+                        <li>Advanced Mind-Body Integration</li>
+                        <li>Full Nutrition Plan & Support</li>
+                    </ul>
+                     <a href="#enquiry" class="button">Enquire Now</a>
+                </div>
+            </div>
+            <p style="margin-top: 30px;"><a href="programs.html" class="button">See All Program Details</a></p> </div>
+    </section>
+
+    <section id="enquiry" class="section">
+        <div class="container">
+            <h2>Have Questions? Get In Touch!</h2>
+            <p>Fill out the form below, and we'll get back to you as soon as possible.</p>
+            <form action="#" method="POST"> <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>-- Select One --</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="Package Inquiry">Training Package Inquiry</option>
+                        <option value="Consultation Request">Consultation Request</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="button">Send Enquiry</button>
+            </form>
+            </div>
+    </section>
+
+    <footer>
+        <div class="container">
+             <nav>
+                 <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="Nialina_ProgramPage.html">Programs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin_login.html">Admin</a></li>
+                </ul>
+            </nav>
+            <p>Nialina Fitness &copy; 2025 | Mindful Movement & Strength</p>
+            </div>
+    </footer>
+
+    <script src="script.js"></script></body>
+</html>

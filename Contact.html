@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Nialina Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="NialinaStyle.css"> 
+     <style>
+        /* Move styles to NialinaStyle.css */
+         :root { --bg-beige: #F5F5DC; --bg-soft-white: #FAF0E6; --pastel-green: #A8D8B9; --dark-green: #556B2F; --text-color: #4a4a4a; --light-grey: #ccc; --white: #ffffff; --shadow-color: rgba(0, 0, 0, 0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Lato', sans-serif; line-height: 1.7; color: var(--text-color); background-color: var(--bg-soft-white); }
+        h1, h2, h3 { font-family: 'Quicksand', sans-serif; color: var(--dark-green); font-weight: 500; }
+        .container { width: 85%; max-width: 1100px; margin: auto; overflow: hidden; padding: 20px 0; }
+        header { background: var(--white); color: var(--dark-green); padding-top: 20px; min-height: 80px; border-bottom: 1px solid var(--light-grey); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px var(--shadow-color); }
+        header #branding { float: left; margin-top: 5px; }
+        header #branding h1 { margin: 0; font-size: 1.8em; }
+        header #branding h1 a { color: var(--dark-green); text-decoration: none; }
+        header nav { float: right; margin-top: 15px; }
+        header nav ul { margin: 0; padding: 0; list-style: none; }
+        header nav ul li { display: inline; padding: 0 15px 0 15px; }
+        header nav ul li a { color: var(--dark-green); text-decoration: none; text-transform: uppercase; font-size: 0.9em; font-weight: 700; transition: color 0.3s ease; }
+        header nav ul li a:hover, header nav ul li.current a { color: var(--pastel-green); }
+        .section { padding: 60px 0; text-align: center; }
+        .section:nth-child(even) { background-color: var(--bg-beige); }
+        .section h2 { margin-bottom: 40px; font-size: 2.5em; }
+        #contact-form-section { background-color: var(--white); } /* Match header */
+         #contact-form-section form { max-width: 600px; margin: 20px auto; padding: 30px; background: var(--bg-soft-white); border-radius: 8px; box-shadow: 0 3px 8px var(--shadow-color); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 5px; color: var(--dark-green); font-weight: bold; text-align: left; }
+        .form-group input[type="text"], .form-group input[type="email"], .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid var(--light-grey); border-radius: 5px; font-family: 'Lato', sans-serif; font-size: 1em; }
+        .form-group textarea { min-height: 120px; resize: vertical; }
+        .form-group select { appearance: none; background: var(--white) url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23556B2F%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E') no-repeat right 10px center; background-size: 10px; background-color: var(--white); } /* Dark Green Arrow */
+        .button { display: inline-block; background: var(--pastel-green); color: var(--dark-green); padding: 12px 25px; text-decoration: none; border-radius: 25px; margin: 5px; font-weight: 700; border: 2px solid transparent; transition: all 0.3s ease; cursor: pointer; }
+        .button:hover { background: var(--dark-green); color: var(--white); transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+         #contact-form-section form .button { display: block; width: 100%; border: none; }
+         .contact-details { margin-top: 40px; text-align: center; }
+        .contact-details p { margin-bottom: 10px; font-size: 1.1em; }
+        .contact-details a { color: var(--dark-green); text-decoration: none; }
+        .contact-details a:hover { color: var(--pastel-green); }
+        #map { margin-top: 40px; height: 300px; background-color: var(--light-grey); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text-color); font-style: italic;} /* Placeholder */
+         footer { padding: 30px 20px; margin-top: 0; color: var(--bg-soft-white); background-color: var(--dark-green); text-align: center; }
+        footer nav ul { margin-bottom: 15px; }
+        footer nav ul li { display: inline; padding: 0 10px; }
+        footer nav ul li a { color: var(--bg-soft-white); text-decoration: none; transition: color 0.3s ease; }
+        footer nav ul li a:hover { color: var(--pastel-green); }
+        footer p { font-size: 0.9em; }
+         /* Responsive */
+         @media(max-width: 768px) {
+             header #branding, header nav { float: none; text-align: center; width: 100%; }
+             header nav ul li { display: block; padding: 8px 0; }
+             #contact-form-section form { width: 90%; padding: 20px; }
+        }
+        @media(max-width: 480px) {
+             .container { width: 95%; }
+             .section h2 { font-size: 2em; }
+             .button { padding: 10px 18px; font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><a href="index.html">Nialina Fitness</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li class="current"><a href="contact.html">Contact</a></li>
+                     <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="contact-form-section" class="section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Have questions about our programs, or ready to book a consultation? Fill out the form below or reach out directly!</p>
+            <form action="#" method="POST"> <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                 <div class="form-group">
+                    <label for="phone">Phone (Optional):</label>
+                    <input type="text" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>-- Select One --</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="Zen Starter Inquiry">Zen Starter Inquiry</option>
+                         <option value="Balanced Body Inquiry">Balanced Body Inquiry</option>
+                         <option value="Total Transformation Inquiry">Total Transformation Inquiry</option>
+                        <option value="Consultation Request">Consultation Request</option>
+                        <option value="Feedback">Feedback</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="button">Send Message</button>
+            </form>
+
+             <div class="contact-details">
+                 <h3>Other Ways to Reach Us</h3>
+                 <p>Email: <a href="mailto:info@nialinafitness.com">info@nialinafitness.com</a></p>
+                 <p>Phone: <a href="tel:+60123456789">+60 12 345 6789</a> (Replace with actual number)</p>
+                 <p>Location: Kuala Terengganu, Terengganu (Studio address available upon consultation booking)</p>
+                 </div>
+
+            <div id="map">
+                Map Placeholder - Studio location provided upon booking.
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin_login.html">Admin</a></li>
+                </ul>
+            </nav>
+            <p>Nialina Fitness &copy; 2025 | Mindful Movement & Strength</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to pre-select subject based on URL parameter if present
+        const urlParams = new URLSearchParams(window.location.search);
+        const subjectParam = urlParams.get('subject');
+        if (subjectParam) {
+            const subjectSelect = document.getElementById('subject');
+            if (subjectSelect) {
+                // Simple match - might need refinement for exact values
+                for (let i = 0; i < subjectSelect.options.length; i++) {
+                    if (subjectSelect.options[i].value.includes(subjectParam.split('%20')[0])) { // Basic check
+                        subjectSelect.value = subjectSelect.options[i].value;
+                        break;
+                    }
+                 }
+            }
+        }
+    </script>
+
+</body>
+</html>

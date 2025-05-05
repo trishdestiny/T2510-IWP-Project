@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Nialina Fitness - Mind & Body Wellness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="NialinaStyle.css">
+    </head>
+<body>
+    <div class="cursor-dot-outline"></div>
+    <div class="cursor-dot"></div>
+
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><a href="index.html">Nialina Fitness</a></h1>
+            </div>
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger-line line-top"></span>
+                <span class="hamburger-line line-middle"></span>
+                <span class="hamburger-line line-bottom"></span>
+            </button>
+            <nav id="primary-navigation" class="primary-navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="current"><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main> {/* Wrap main content in <main> */}
+        <section class="page-title-section reveal-on-scroll"> {/* Animate page title */}
+             <div class="container">
+                <h2>Our Story & Philosophy</h2>
+                <p>Balancing physical strength with mental clarity.</p>
+            </div>
+        </section>
+
+        <section id="about-main" class="section reveal-on-scroll"> {/* Animate philosophy section */}
+            <div class="container">
+                <h2>Our Philosophy</h2>
+                <p>
+                    At Nialina Fitness, we believe true wellness comes from balancing physical strength with mental clarity. Founded on the principles of mindful movement and personalized support, our mission is to guide you towards achieving sustainable health goals in a calm, encouraging environment. We focus on holistic well-being, integrating fitness routines that nourish both the body and the mind.
+                </p>
+                <p>
+                    Our approach is centered around you. We understand that every individual's journey is unique, which is why we tailor our programs to fit your specific needs, lifestyle, and aspirations. Whether you're starting your fitness journey or looking to deepen your practice, Nialina Fitness provides the expertise and support to help you find your strength and achieve your zen.
+                </p>
+            </div>
+        </section>
+
+        <section id="team" class="section reveal-on-scroll"> {/* Animate team section */}
+            <div class="container">
+                <h2>Meet the Founder</h2>
+                <div class="team-members">
+                     {/* Add reveal-on-scroll and tilt-card to individual cards */}
+                     {/* Add staggered animation delays via inline style or JS if desired */}
+                    <div class="trainer-card tilt-card reveal-on-scroll" style="animation-delay: 0.2s;">
+                        <img src="https://placehold.co/150x150/A8D8B9/556B2F?text=Nia" alt="Founder Nia"> <h4>Nia Lina</h4>
+                        <p class="trainer-title">Founder & Lead Trainer</p>
+                        <p>With over 10 years of experience in personal training and mindfulness coaching, Nia founded Nialina Fitness to create a space where fitness meets tranquility.</p>
+                    </div>
+                    {/* Add more team members here if applicable, maybe with different delays */}
+                     {/* <div class="trainer-card tilt-card reveal-on-scroll" style="animation-delay: 0.4s;">...</div> */}
+                </div>
+            </div>
+        </section>
+
+         {/* OPTIONAL: Add more interactive sections */}
+        {/* Example: Values Section */}
+        <section id="our-values" class="section reveal-on-scroll">
+            <div class="container">
+                <h2>Our Core Values</h2>
+                <div class="values-grid"> {/* Use grid for values */}
+                    <div class="value-item reveal-on-scroll" style="animation-delay: 0.1s;">
+                        <div class="value-icon">🧘‍♀️</div> {/* Placeholder icon */}
+                        <h4>Mindfulness</h4>
+                        <p>Integrating conscious movement and presence into every session.</p>
+                    </div>
+                    <div class="value-item reveal-on-scroll" style="animation-delay: 0.3s;">
+                        <div class="value-icon">🤝</div> {/* Placeholder icon */}
+                        <h4>Personalization</h4>
+                        <p>Tailoring programs to your unique body, goals, and journey.</p>
+                    </div>
+                    <div class="value-item reveal-on-scroll" style="animation-delay: 0.5s;">
+                        <div class="value-icon">🌱</div> {/* Placeholder icon */}
+                        <h4>Growth</h4>
+                        <p>Fostering sustainable progress and holistic well-being.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+             <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin_login.html">Admin</a></li>
+                </ul>
+            </nav>
+            <p>Nialina Fitness &copy; 2025 | Mindful Movement & Strength</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> {/* Link your main JS file */}
+</body>
+</html>

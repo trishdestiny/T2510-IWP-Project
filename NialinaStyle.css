@@ -1,0 +1,998 @@
+/* Nialina Fitness - NialinaStyle.css */
+
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Quicksand:wght@300;400;500&display=swap');
+
+/* --- CSS Variables (Theme Colors & Fonts) --- */
+:root {
+    --bg-beige: #F5F5DC;
+    --bg-soft-white: #FAF0E6;
+    --pastel-green: #A8D8B9;
+    --dark-green: #556B2F;
+    --text-color: #4a4a4a;
+    --light-grey: #e0e0e0; /* Slightly softer grey */
+    --white: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.08); /* Softer shadow */
+    --shadow-hover-color: rgba(0, 0, 0, 0.15); /* Slightly darker shadow on hover */
+    --admin-heading-color: #b22222;
+
+    --font-primary: 'Lato', sans-serif;
+    --font-secondary: 'Quicksand', sans-serif;
+
+    /* Added transition timing */
+    --transition-speed: 0.3s;
+    --transition-timing: ease-in-out;
+}
+
+/* --- Basic Reset --- */
+*, *::before, *::after { /* Include pseudo-elements in reset */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- General Body Styling --- */
+html {
+    scroll-behavior: smooth; /* --- Cool: Smooth scrolling for anchor links --- */
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--bg-soft-white);
+    font-size: 16px;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    color: var(--dark-green);
+    font-weight: 500;
+    margin-bottom: 0.8em;
+    line-height: 1.3; /* Added line-height for headings */
+}
+
+p {
+    margin-bottom: 1.2em; /* Slightly more space */
+}
+
+a {
+    color: var(--pastel-green);
+    text-decoration: none;
+    transition: color var(--transition-speed) var(--transition-timing);
+}
+
+a:hover {
+    color: var(--dark-green);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul, ol {
+    margin-bottom: 1em;
+    padding-left: 20px;
+}
+
+/* --- Utility Classes --- */
+.text-center {
+    text-align: center;
+}
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+
+/* --- Container --- */
+.container {
+    width: 90%; /* Increased default width */
+    max-width: 1140px; /* Standard max width */
+    margin: auto;
+    padding: 20px 15px; /* Added horizontal padding */
+}
+
+/* --- Header Styling --- */
+header {
+    background: var(--white);
+    color: var(--dark-green);
+    padding: 10px 0; /* Reduced padding */
+    min-height: 70px; /* Slightly reduced height */
+    border-bottom: 1px solid var(--light-grey);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: padding var(--transition-speed) var(--transition-timing); /* --- Cool: Transition for potential scroll effects --- */
+}
+
+
+/* --- Header Styling --- */
+header {
+    /* ... (your existing header styles) ... */
+}
+
+header.scrolled { /* Added right after the main header style */
+    padding: var(--space-xs) 0;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 12px var(--shadow-hover-color);
+}
+
+header .container {
+   /* ... */
+}
+/* ... (rest of header styles like #branding, nav etc.) ... */
+
+/* Add class on scroll if desired via JS
+body.scrolled header {
+    padding: 5px 0;
+    box-shadow: 0 3px 8px var(--shadow-hover-color);
+} */
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px; /* Consistent padding */
+}
+
+
+header #branding h1 {
+    margin: 0;
+    font-size: clamp(1.5em, 4vw, 1.8em); /* --- Cool: Responsive font size --- */
+}
+
+header #branding h1 a {
+     color: var(--dark-green);
+     text-decoration: none;
+     transition: color var(--transition-speed) var(--transition-timing);
+}
+header #branding h1 a:hover {
+     color: var(--pastel-green);
+}
+
+/* --- Navigation Styling --- */
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex; /* Use flex for nav items */
+}
+
+header nav ul li {
+    margin-left: clamp(10px, 2vw, 25px); /* --- Cool: Responsive spacing --- */
+}
+
+header nav ul li a {
+    color: var(--dark-green);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: clamp(0.8em, 1.5vw, 0.9em); /* Responsive font size */
+    font-weight: 700;
+    padding: 8px 5px; /* Adjusted padding */
+    position: relative;
+    transition: color var(--transition-speed) var(--transition-timing);
+    overflow: hidden; /* Needed for underline effect */
+}
+
+header nav ul li a:hover,
+header nav ul li.current a {
+    color: var(--pastel-green);
+}
+
+/* --- Cool: Underline effect --- */
+header nav ul li a::after {
+    content: '';
+    display: block;
+    width: 100%; /* Full width */
+    height: 2px;
+    background: var(--pastel-green);
+    transition: transform var(--transition-speed) var(--transition-timing);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0); /* Start scaled down */
+    transform-origin: left; /* Grow from left */
+}
+
+header nav ul li a:hover::after,
+header nav ul li.current a::after {
+    transform: scaleX(1); /* Scale up on hover/current */
+}
+
+
+/* --- Hero Section Styling (Homepage) --- */
+#hero {
+    min-height: 60vh; /* Use viewport height */
+    max-height: 550px; /* Set a max height */
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('https://placehold.co/1600x700/A8D8B9/556B2F?text=Nialina+Fitness') no-repeat center center/cover; /* Higher res placeholder */
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#hero h1 {
+    margin-top: 0;
+    font-size: clamp(2.5em, 6vw, 4em); /* Responsive font size */
+    margin-bottom: 0.5em;
+    color: var(--white);
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* Enhanced shadow */
+    /* --- Cool: Subtle entrance animation --- */
+    animation: fadeInDown 1s ease-out both;
+}
+
+#hero p {
+    font-size: clamp(1.1em, 2.5vw, 1.3em); /* Responsive font size */
+    margin-bottom: 1.5em;
+    max-width: 650px;
+    line-height: 1.6;
+     /* --- Cool: Subtle entrance animation --- */
+    animation: fadeInUp 1s 0.3s ease-out both; /* Delayed */
+}
+
+#hero .button-group { /* Wrapper for buttons if needed */
+     /* --- Cool: Subtle entrance animation --- */
+     animation: fadeInUp 1s 0.6s ease-out both; /* More delayed */
+}
+
+/* --- Button Styling --- */
+.button {
+    display: inline-block;
+    background: var(--pastel-green);
+    color: var(--dark-green);
+    padding: 12px 30px; /* More padding */
+    text-decoration: none;
+    border-radius: 30px; /* Fully rounded */
+    margin: 8px; /* Increased margin */
+    font-weight: 700;
+    border: 2px solid var(--pastel-green); /* Use border color */
+    transition: all var(--transition-speed) var(--transition-timing);
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 2px 4px var(--shadow-color); /* Base shadow */
+}
+
+/* --- Cool: Enhanced Button Hover --- */
+.button:hover {
+    background: var(--dark-green);
+    color: var(--white);
+    border-color: var(--dark-green); /* Match background */
+    transform: translateY(-3px) scale(1.03); /* Lift and slightly enlarge */
+    box-shadow: 0 6px 12px var(--shadow-hover-color); /* Stronger shadow */
+}
+/* Button Variant - Outline */
+.button.button-outline {
+    background: transparent;
+    color: var(--dark-green);
+    border-color: var(--dark-green);
+}
+.button.button-outline:hover {
+     background: var(--dark-green);
+     color: var(--white);
+}
+
+
+/* --- General Section Styling --- */
+.section {
+    padding: clamp(40px, 8vw, 80px) 15px; /* Responsive padding */
+    text-align: center;
+    overflow: hidden; /* Hide overflow for animations */
+}
+/* Alternate background color for sections */
+.section:nth-of-type(even) {
+    background-color: var(--bg-beige);
+}
+/* Adjusting the logic for first/last section background if needed */
+/* Example: Giving specific sections dedicated backgrounds */
+#intro, #contact-info, #enquiry, #map-location {
+    background-color: var(--bg-soft-white); /* Ensure these are not beige */
+}
+#training-packages, #auth-form-section {
+    background-color: var(--bg-beige); /* Ensure these are beige */
+}
+
+
+.section h2 {
+    margin-bottom: clamp(30px, 5vw, 50px); /* Responsive margin */
+    font-size: clamp(2em, 5vw, 2.8em); /* Responsive heading */
+    position: relative;
+    display: inline-block; /* Needed for pseudo-element */
+}
+/* --- Cool: Underline accent for H2 --- */
+.section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--pastel-green);
+    margin: 10px auto 0 auto; /* Center below heading */
+}
+
+.section h3 {
+    margin-bottom: clamp(15px, 3vw, 25px);
+    font-size: clamp(1.5em, 4vw, 2em);
+}
+
+/* General paragraph styling within sections */
+.section > .container > p:not([class]) { /* Target paragraphs without specific classes */
+     text-align: center;
+     max-width: 700px;
+     margin-left: auto;
+     margin-right: auto;
+     font-size: clamp(1em, 1.8vw, 1.1em); /* Responsive text */
+     line-height: 1.8;
+}
+
+/* --- Page Title Section Styling --- */
+.page-title-section {
+    padding: clamp(30px, 6vw, 50px) 0;
+    background-color: var(--bg-beige);
+    text-align: center;
+}
+.page-title-section h2 {
+    margin-bottom: 0.5em;
+}
+.page-title-section p {
+    font-size: clamp(1em, 2vw, 1.1em);
+    color: var(--dark-green);
+    margin-bottom: 0;
+    text-align: center;
+}
+
+
+/* --- Training Packages Styling --- */
+.packages, .features {
+    display: grid; /* --- Cool: Using Grid Layout --- */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 30px; /* Gap between grid items */
+    margin-top: 20px;
+}
+
+.package-box, .feature-box {
+    /* width/flex-basis removed - handled by grid */
+    padding: 30px 25px;
+    background: var(--white);
+    border-radius: 15px; /* More rounded */
+    box-shadow: 0 4px 10px var(--shadow-color);
+    text-align: left;
+    transition: all var(--transition-speed) var(--transition-timing);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid transparent; /* Base border */
+    /* --- Cool: Subtle entrance animation for cards --- */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+/* Stagger animation delays for cards */
+.package-box:nth-child(1), .feature-box:nth-child(1) { animation-delay: 0.1s; }
+.package-box:nth-child(2), .feature-box:nth-child(2) { animation-delay: 0.2s; }
+.package-box:nth-child(3), .feature-box:nth-child(3) { animation-delay: 0.3s; }
+/* Add more if needed */
+
+.package-box > *:last-child {
+     margin-top: auto; /* Push button to bottom */
+}
+
+/* --- Cool: Enhanced Package Box Hover --- */
+.package-box:hover, .feature-box:hover {
+     transform: translateY(-8px); /* More lift */
+     box-shadow: 0 10px 20px var(--shadow-hover-color); /* More shadow */
+     border-color: var(--pastel-green); /* Highlight border */
+}
+
+.package-box h3, .feature-box h3 {
+    margin-bottom: 15px;
+    font-size: clamp(1.4em, 3vw, 1.6em); /* Responsive */
+    text-align: center;
+}
+.package-box p, .feature-box p {
+    margin-bottom: 15px;
+    font-size: 0.95em;
+    text-align: left;
+    flex-grow: 1; /* Allow paragraphs to grow if needed */
+}
+.package-box ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 25px; /* More space before button */
+}
+.package-box ul li {
+    margin-bottom: 10px; /* More space between items */
+    position: relative;
+    padding-left: 28px;
+    font-size: 0.9em;
+}
+/* Custom bullet point */
+.package-box ul li::before {
+    content: '✓';
+    color: var(--pastel-green);
+    font-size: 1em;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 1px;
+    transition: transform var(--transition-speed) var(--transition-timing); /* --- Cool: Add transition to bullet --- */
+}
+.package-box:hover ul li::before {
+    transform: scale(1.2); /* --- Cool: Scale bullet on hover --- */
+}
+
+.package-box .button {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0 auto;
+}
+
+/* --- Program Item Styling (Programs Page) --- */
+/* Reuse package-box style or create specific */
+.program-item {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    margin-bottom: 30px;
+    text-align: left;
+}
+.program-item h3 {
+    margin-bottom: 15px;
+}
+.program-item p {
+    margin-bottom: 10px;
+}
+.program-item ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+.program-item strong {
+    color: var(--dark-green);
+}
+
+
+/* --- Forms Styling (Generic - applied to Enquiry, Contact, Auth) --- */
+/* Section wrappers */
+#enquiry, #contact-info, #auth-form-section {
+     background-color: var(--white); /* Default */
+}
+#auth-form-section {
+     background-color: var(--bg-beige);
+     min-height: calc(100vh - 140px); /* Adjusted for potentially smaller header/footer */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 60px 15px; /* Ensure padding */
+}
+#contact-info {
+     background-color: var(--bg-soft-white); /* Match body */
+}
+
+/* General Form Styling */
+.form-container {
+     max-width: 650px; /* Slightly wider default */
+     margin: 20px auto;
+     padding: clamp(25px, 5vw, 40px); /* Responsive padding */
+     background: var(--bg-soft-white);
+     border-radius: 10px;
+     box-shadow: 0 5px 15px var(--shadow-color);
+}
+/* Specific form styling */
+#auth-form-section .form-container {
+     max-width: 480px;
+     padding: 40px clamp(25px, 5vw, 40px);
+     background: var(--white);
+     box-shadow: 0 6px 20px var(--shadow-hover-color);
+     /* --- Cool: Animation for auth form --- */
+     opacity: 0;
+     transform: scale(0.95);
+     animation: scaleUp 0.5s 0.2s ease-out forwards;
+}
+#auth-form-section .form-container h2 {
+     text-align: center;
+     margin-bottom: 30px;
+}
+#auth-form-section[aria-label="Admin Login Form"] h2 {
+    color: var(--admin-heading-color);
+}
+
+
+.form-group {
+    margin-bottom: 25px; /* Increased spacing */
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--dark-green);
+    font-weight: 700; /* Bolder label */
+    text-align: left;
+    font-size: 0.9em;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px; /* Increased padding */
+    border: 1px solid var(--light-grey);
+    border-radius: 8px; /* Slightly more rounded */
+    font-family: var(--font-primary);
+    font-size: 1em;
+    background-color: var(--white);
+    transition: border-color var(--transition-speed) var(--transition-timing), box-shadow var(--transition-speed) var(--transition-timing);
+}
+/* --- Cool: Enhanced focus --- */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--pastel-green);
+    box-shadow: 0 0 0 4px rgba(168, 216, 185, 0.3); /* Softer, larger glow */
+}
+
+.form-group textarea {
+    min-height: 140px; /* Taller textarea */
+    resize: vertical;
+}
+.form-group select {
+     appearance: none;
+     background: var(--white) url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23556B2F%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E') no-repeat right 15px center;
+     background-size: 12px; /* Slightly larger arrow */
+}
+/* Full width button within forms */
+form .button {
+    display: block;
+    width: 100%;
+    border: none;
+    margin-top: 15px;
+    padding: 14px 30px; /* Match input padding */
+}
+
+/* Link below auth forms */
+.form-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.95em;
+}
+.form-link a {
+    color: var(--dark-green);
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 2px;
+}
+/* --- Cool: Underline effect for link --- */
+.form-link a::after {
+     content: '';
+     position: absolute;
+     width: 100%;
+     height: 1px;
+     bottom: 0;
+     left: 0;
+     background-color: var(--pastel-green);
+     transform: scaleX(0);
+     transform-origin: bottom right;
+     transition: transform 0.25s ease-out;
+}
+.form-link a:hover::after {
+     transform: scaleX(1);
+     transform-origin: bottom left;
+}
+
+/* --- Contact Page Specific Styles --- */
+#contact-layout .container {
+    display: grid; /* Using Grid */
+    grid-template-columns: 1fr; /* Default to single column */
+    gap: 40px; /* Gap between grid items */
+}
+@media(min-width: 769px) { /* Two columns on larger screens */
+    #contact-layout .container {
+        grid-template-columns: 1fr 1.5fr; /* Adjust ratio as needed */
+        align-items: start; /* Align items to the top */
+   }
+}
+
+.contact-details {
+    /* width/flex-basis removed */
+    text-align: left;
+}
+.contact-details h3 {
+    margin-bottom: 20px;
+    font-size: clamp(1.4em, 3vw, 1.6em);
+}
+.contact-details p {
+    margin-bottom: 18px;
+    line-height: 1.8;
+    font-size: clamp(0.95em, 1.8vw, 1em);
+}
+.contact-details p strong {
+    color: var(--dark-green);
+    margin-right: 5px;
+}
+.contact-details a { /* Style links within details */
+    color: var(--dark-green);
+    word-break: break-word; /* Prevent long links breaking layout */
+}
+.contact-details a:hover {
+     color: var(--pastel-green);
+     text-decoration: underline;
+}
+
+.contact-form-wrapper {
+    /* width/flex-basis removed */
+}
+.contact-form-wrapper h3 {
+     text-align: left;
+     margin-bottom: 20px;
+     font-size: clamp(1.4em, 3vw, 1.6em);
+}
+.contact-form-wrapper .form-container {
+     margin: 0;
+     width: 100%;
+     max-width: 100%;
+     padding: 0; /* Remove padding if form has it */
+     background: none; /* Transparent background */
+     box-shadow: none; /* No shadow */
+}
+
+
+/* --- Map Section Styling --- */
+#map-location {
+    padding: 60px 0; /* Standard section padding */
+}
+#map {
+    height: 450px; /* Increased height */
+    background-color: var(--light-grey);
+    border-radius: 10px; /* Match other elements */
+    margin-top: 0; /* Removed top margin */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-color);
+    overflow: hidden;
+    border: 1px solid var(--light-grey); /* Add subtle border */
+}
+#map iframe {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(30%); /* --- Cool: Slightly desaturate map --- */
+    transition: filter var(--transition-speed) var(--transition-timing);
+}
+#map:hover iframe {
+     filter: grayscale(0%); /* --- Cool: Restore color on hover --- */
+}
+
+/* --- About Page - Team Section --- */
+.team-members {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+.trainer-card {
+    /* width/flex-basis removed */
+    min-width: 0; /* Reset min-width */
+    background: var(--white);
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    margin-bottom: 0; /* Gap handles spacing */
+    text-align: center;
+    transition: all var(--transition-speed) var(--transition-timing);
+    border: 1px solid transparent;
+     /* --- Cool: Animation for cards --- */
+     opacity: 0;
+     transform: translateY(20px);
+     animation: fadeInUp 0.6s ease-out forwards;
+}
+/* Stagger animation delays */
+.trainer-card:nth-child(1) { animation-delay: 0.1s; }
+.trainer-card:nth-child(2) { animation-delay: 0.2s; }
+.trainer-card:nth-child(3) { animation-delay: 0.3s; } /* Add more if needed */
+
+.trainer-card:hover {
+    transform: translateY(-8px) scale(1.02); /* Lift and slight scale */
+    box-shadow: 0 10px 20px var(--shadow-hover-color);
+    border-color: var(--pastel-green);
+}
+.trainer-card img {
+    width: 100%;
+    max-width: 140px; /* Slightly smaller */
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px auto; /* Increased bottom margin */
+    border: 4px solid var(--pastel-green); /* Thicker border */
+    transition: transform var(--transition-speed) var(--transition-timing);
+}
+.trainer-card:hover img {
+    transform: scale(1.05); /* --- Cool: Scale image on hover --- */
+}
+
+.trainer-card h4 {
+    text-align: center;
+    margin-bottom: 8px; /* Reduced margin */
+    color: var(--dark-green);
+    font-size: clamp(1.2em, 2.5vw, 1.4em);
+}
+.trainer-card .trainer-title { /* Add a class for the title if needed */
+     display: block;
+     font-size: 0.85em;
+     color: var(--pastel-green);
+     font-weight: bold;
+     text-transform: uppercase;
+     margin-bottom: 15px;
+}
+.trainer-card p:not(.trainer-title) { /* Style description */
+    font-size: 0.9em;
+    text-align: center;
+    line-height: 1.7; /* Increased line height */
+    color: var(--text-color);
+}
+
+
+/* --- Footer Styling --- */
+footer {
+    padding: 40px 20px; /* Increased padding */
+    color: var(--bg-soft-white);
+    background-color: var(--dark-green);
+    text-align: center;
+}
+footer nav ul {
+    margin-bottom: 20px; /* More space */
+    padding-left: 0;
+    list-style: none;
+}
+footer nav ul li {
+    display: inline-block;
+    padding: 0 12px; /* Slightly more padding */
+}
+footer nav ul li a {
+    color: var(--bg-soft-white);
+    text-decoration: none;
+    transition: color var(--transition-speed) var(--transition-timing);
+    font-size: 0.9em;
+    opacity: 0.8; /* Slightly transparent */
+}
+footer nav ul li a:hover {
+    color: var(--pastel-green);
+    opacity: 1; /* Full opacity on hover */
+}
+footer p {
+    font-size: 0.9em;
+    margin-top: 10px;
+    margin-bottom: 0;
+    opacity: 0.7; /* Slightly transparent copyright */
+}
+
+/* --- Animation Keyframes --- */
+/* --- Cool: Added standard animations --- */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+/* --- Responsive Design Adjustments (Overrides) --- */
+
+/* Medium screens (Tablets) */
+@media(max-width: 992px) {
+    .container {
+        width: 90%;
+    }
+    /* Grid adjustments if needed */
+    .packages, .features, .team-members {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Ensure items fit */
+    }
+}
+
+/* Small screens (Tablets in portrait, large phones) */
+@media(max-width: 768px) {
+    /* Header layout */
+    header .container {
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+    header #branding {
+        margin-bottom: 15px;
+    }
+    header nav ul {
+        flex-wrap: wrap; /* Allow nav items to wrap */
+        justify-content: center; /* Center wrapped items */
+    }
+    header nav ul li {
+        margin: 5px 8px; /* Adjust spacing for wrapped items */
+    }
+    header nav ul li a::after {
+        display: none; /* Hide underline effect on mobile nav */
+    }
+
+    /* Hero text size */
+    #hero h1 { font-size: clamp(2em, 8vw, 2.8em); }
+    #hero p { font-size: clamp(1em, 4vw, 1.1em); }
+
+    /* Stack grid items */
+    .packages, .features, .team-members {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 25px;
+    }
+    .package-box, .feature-box, .trainer-card {
+        width: 100%; /* Full width within container */
+        max-width: 450px; /* Max width for single column items */
+        margin: 0 auto 25px auto; /* Center stacked items */
+    }
+
+    /* Section heading size */
+    .section h2 { font-size: clamp(1.8em, 6vw, 2.4em); }
+    .section h3 { font-size: clamp(1.4em, 5vw, 1.8em); }
+
+    /* Forms */
+    .form-container,
+    #auth-form-section .form-container {
+        width: 100%; /* Use container padding */
+        padding: 25px;
+    }
+
+    /* Contact page layout */
+    #contact-layout .container {
+        grid-template-columns: 1fr; /* Ensure single column */
+    }
+    .contact-details, .contact-form-wrapper {
+        max-width: 100%;
+        text-align: center;
+    }
+    .contact-details p,
+    .contact-form-wrapper h3,
+    .contact-form-wrapper label {
+        text-align: center;
+    }
+    .contact-details {
+        margin-bottom: 30px;
+    }
+}
+
+/* --- Optional: About Page - Values Section --- */
+#our-values {
+    background-color: var(--bg-beige); /* Or alternate background */
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); /* Responsive grid */
+    gap: var(--space-lg);
+    margin-top: var(--space-md);
+}
+
+.value-item {
+    padding: var(--space-md);
+    /* Optional: Add background/border */
+    /* background: var(--white); */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 3px 8px var(--shadow-color); */
+    transition: transform var(--transition-speed) var(--transition-timing);
+}
+
+.value-item:hover {
+     transform: translateY(-5px); /* Subtle hover lift */
+}
+
+.value-icon {
+    font-size: clamp(2.5rem, 6vw, 3.5rem); /* Large icon size */
+    margin-bottom: var(--space-sm);
+    line-height: 1;
+}
+
+.value-item h4 {
+    font-size: var(--font-size-h4);
+    margin-bottom: var(--space-xs);
+    color: var(--dark-green);
+}
+
+.value-item p {
+    font-size: var(--font-size-sm);
+    color: var(--text-color);
+    margin-bottom: 0;
+    max-width: 40ch; /* Limit line length */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ensure reveal-on-scroll is applied */
+.value-item.reveal-on-scroll {
+    /* Animation handled by existing JS/CSS */
+}
+
+/* Extra small screens (Phones) */
+ @media(max-width: 480px) {
+     .container {
+         width: 95%;
+         padding: 15px 10px; /* Reduced padding */
+    }
+     #hero h1 { font-size: clamp(1.8em, 10vw, 2.2em); }
+     #hero p { font-size: clamp(0.9em, 4vw, 1em); }
+
+     .section h2 { font-size: clamp(1.6em, 7vw, 2em); }
+     .section h3 { font-size: clamp(1.3em, 6vw, 1.6em); }
+
+     .button {
+         padding: 10px 20px; /* Smaller buttons */
+         font-size: 0.9em;
+         width: 100%; /* Make buttons full width on mobile */
+         max-width: 300px; /* Max width for buttons */
+         margin-left: auto;
+         margin-right: auto;
+         display: block;
+    }
+     #hero .button-group .button { /* Specific for hero if needed */
+        width: auto; /* Revert hero buttons if needed */
+        display: inline-block;
+        max-width: none;
+     }
+
+     header nav ul li {
+         margin: 3px 5px;
+    }
+     .package-box, .feature-box, .trainer-card {
+        width: 100%; /* Ensure full width */
+    }
+     .form-container,
+     #auth-form-section .form-container {
+        padding: 20px 15px;
+    }
+     footer nav ul li {
+         padding: 0 8px;
+		 
+     }
+	 
+	 /* --- NialinaStyle.css --- */
+/* ... (your existing styles like variables, body, header, sections, etc.) ... */
+
+/* =============================================
+   INTERACTIVITY & ANIMATIONS
+   ============================================= */
+
+/* --- Styles for Scroll Animations --- */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s var(--transition-timing), transform 0.8s var(--transition-timing);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ... (Other animations like @keyframes) ... */
+
+/* =============================================
+   RESPONSIVE DESIGN
+   ============================================= */
+@media (max-width: 992px) {
+   /* ... */
+}
+/* ... (Other media queries) ... */
+ }
